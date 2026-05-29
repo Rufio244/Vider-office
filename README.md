@@ -1,4 +1,13 @@
 # Vider-office
+# 🚀 Rufio244/Vider-office
+**VIDER OFFICE API: Transform Legacy System → Offline AI System**
+✅ Single Code File | ✅ API Key Auth | ✅ Token Billing | ✅ MOB Compatible
+
+## 🚀 Quick Start
+```bash
+pip install -r requirements.txt
+python vider_office.py
+
 # 🚀 VIDER OFFICE API v2.0
 **Transform ANY Legacy System into Offline AI Smart System**
 
