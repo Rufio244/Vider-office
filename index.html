@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDER OFFICE | Transform Legacy to Offline AI System 🚀🧠</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 🎨 CONFIG TAILWIND -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36D399',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        warning: '#FFAB00',
+                        danger: '#F87272'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        kanit: ['Kanit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+            .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            .card-hover { transition: all 0.3s ease; }
+            .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+            .gradient-text { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(90deg, #165DFF, #36D399); }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark overflow-x-hidden">
+
+    <!-- 🌐 NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-3 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-primary text-3xl"><i class="fa fa-cube"></i></span>
+                <span class="font-kanit font-bold text-2xl gradient-text">VIDER OFFICE</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#home" class="hover:text-primary transition-colors">หน้าแรก</a>
+                <a href="#about" class="hover:text-primary transition-colors">เกี่ยวกับเรา</a>
+                <a href="#features" class="hover:text-primary transition-colors">ความสามารถ</a>
+                <a href="#howitworks" class="hover:text-primary transition-colors">วิธีการทำงาน</a>
+                <a href="#pricing" class="hover:text-primary transition-colors">ราคา</a>
+                <a href="#docs" class="hover:text-primary transition-colors">คู่มือ</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="/login" class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all">เข้าสู่ระบบ</a>
+                <a href="/register" class="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all shadow-lg">เริ่มใช้งานฟรี</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl text-primary">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg rounded-b-lg mt-2 py-4 px-4 absolute w-full">
+            <div class="flex flex-col gap-3 font-kanit font-medium">
+                <a href="#home" class="py-2 hover:text-primary">หน้าแรก</a>
+                <a href="#about" class="py-2 hover:text-primary">เกี่ยวกับเรา</a>
+                <a href="#features" class="py-2 hover:text-primary">ความสามารถ</a>
+                <a href="#howitworks" class="py-2 hover:text-primary">วิธีการทำงาน</a>
+                <a href="#pricing" class="py-2 hover:text-primary">ราคา</a>
+                <a href="#docs" class="py-2 hover:text-primary">คู่มือ</a>
+                <div class="flex flex-col gap-2 mt-3">
+                    <a href="/login" class="px-4 py-2 rounded-lg border border-primary text-center text-primary">เข้าสู่ระบบ</a>
+                    <a href="/register" class="px-4 py-2 rounded-lg bg-primary text-white text-center">เริ่มใช้งานฟรี</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🚀 HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 space-y-8">
+                    <h1 class="font-kanit font-extrabold text-[clamp(2.5rem,5vw,4.5rem)] leading-tight text-shadow">
+                        เปลี่ยนระบบเดิม <br>
+                        <span class="gradient-text">เป็น AI อัจฉริยะ</span> <br>
+                        แบบไม่ล่มระบบ 🛡️✅
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                        VIDER OFFICE คือ API อัจฉริยะที่จะแปลงระบบงานแบบดั้งเดิม, Excel, Manual ให้กลายเป็นระบบอัจฉริยะทำงานด้วย AI แบบ <b>ออฟไลน์ 100%</b> พร้อมรองรับการทำงานร่วมกับ <b>MOB (Machine Offline Builder)</b> 🧰 สร้างระบบใหม่โดยที่ระบบเก่ายังใช้ได้ปกติ 🔄⚡️
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#pricing" class="px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                            <i class="fa fa-rocket mr-2"></i>เริ่มสร้างระบบฟรี
+                        </a>
+                        <a href="#howitworks" class="px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-all">
+                            <i class="fa fa-play-circle mr-2"></i>ดูวิธีการทำงาน
+                        </a>
+                    </div>
+                    <div class="pt-6 flex flex-wrap gap-6 items-center">
+                        <div class="flex -space-x-3">
+                            <img src="https://picsum.photos/id/1005/100/100" class="w-10 h-10 rounded-full border-2 border-white shadow" alt="user">
+                            <img src="https://picsum.photos/id/1012/100/100" class="w-10 h-10 rounded-full border-2 border-white shadow" alt="user">
+                            <img src="https://picsum.photos/id/1025/100/100" class="w-10 h-10 rounded-full border-2 border-white shadow" alt="user">
+                            <div class="w-10 h-10 rounded-full border-2 border-white shadow bg-primary flex items-center justify-center text-white font-bold">500+</div>
+                        </div>
+                        <p class="text-gray-600"><span class="font-bold text-dark">500+ องค์กร</span> ไว้วางใจใช้ VIDER OFFICE</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative rounded-2xl shadow-2xl overflow-hidden border-8 border-white">
+                        <img src="https://picsum.photos/id/3/800/500" alt="Dashboard" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-6">
+                            <p class="text-white font-kanit font-bold text-xl">API Dashboard พร้อมใช้งาน</p>
+                            <p class="text-gray-300">สร้างระบบครบวงจรด้วยโค้ดบรรทัดเดียว</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-secondary text-white p-4 rounded-xl shadow-lg">
+                        <i class="fa fa-check-circle text-4xl"></i>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-primary text-white p-4 rounded-xl shadow-lg">
+                        <i class="fa fa-cube text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📖 ABOUT SECTION - อธิบาย VIDER ทั้งหมด -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-kanit font-bold text-[clamp(2rem,4vw,3.5rem)] gradient-text mb-4">VIDER OFFICE คืออะไร?</h2>
+                <p class="text-gray-600 text-lg">นวัตกรรมการพัฒนาระบบซอฟต์แวร์รูปแบบใหม่ ที่เปลี่ยนโลก IT ขององค์กรตลอดไป</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                    <p><b class="text-primary">VIDER OFFICE</b> คือ <b>"Software Engineer AI API"</b> หรือวิศวกรโปรแกรมเมอร์อัจฉริยะในรูปแบบของ API Service ที่ถูกพัฒนาขึ้นโดยทีมวิศวกรระดับโลก ภายใต้คอนเซปต์ <b class="text-secondary">Rufio244/Vider-office</b></p>
+                    
+                    <p>มันถูกสร้างขึ้นมาเพื่อแก้ปัญหาใหญ่ที่สุดของธุรกิจ นั่นคือ <b>"ความยากลำบากและความเสี่ยงในการยกระดับระบบงานเดิม (Legacy System)"</b> ซึ่งส่วนใหญ่เมื่อต้องการอัพเกรดมักจะต้องเผชิญกับปัญหา ระบบล่ม, หยุดงาน, สูญเสียข้อมูล, ต้นทุนสูง, ใช้เวลานาน และต้องพึ่งพาบุคลากรที่มีความสามารถสูงซึ่งหายากและมีราคาสูง</p>
+                    
+                    <p>VIDER OFFICE เข้ามาเปลี่ยนโฉมหน้าด้วยการนำเสนอเทคโนโลยี <b class="text-warning">Legacy Wrapper Technology</b> ซึ่งเป็นเทคโนโลยีเฉพาะของเรา ทำหน้าที่ "ห่อหุ้ม" ระบบเดิมไว้ ไม่ทำลาย ไม่แก้ไขโค้ดเดิมแม้แต่ตัวเดียว แต่จะสร้างระบบใหม่ที่ดีกว่า ฉลาดกว่า ทันสมัยกว่า ทำงานคู่ขนานไปกับระบบเดิม จนกว่าผู้ใช้จะมั่นใจแล้วค่อยย้ายการทำงานเข้าสู่ระบบใหม่อย่างสมบูรณ์แบบ</p>
+                    
+                    <p>สิ่งที่พิเศษที่สุดคือ VIDER OFFICE ถูกออกแบบมาให้ <b>"All-In-One Single Code"</b> คือทุกระบบ ทุกฟังก์ชัน รวมอยู่ในไฟล์โค้ดเดียว สามารถ Deploy ได้ทันที เชื่อมต่อใช้งานได้ด้วยคำสั่งเพียงบรรทัดเดียว <code class="bg-gray-100 p-1 rounded text-primary">from vider_office import ViderOfficeAPI</code> 🪄</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-xl border border-gray-100">
+                        <h3 class="font-kanit font-bold text-2xl text-primary mb-4">สถาปัตยกรรมระบบหลัก 🧬</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4 items-start">
+                                <i class="fa fa-check-circle text-secondary text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">1. VIDER ENGINE 🧠</h4>
+                                    <p class="text-gray-600">สมองกลาง AI ทำหน้าที่: วิเคราะห์, ออกแบบ, เขียนโค้ด, ฝังระบบ, ตรวจสอบความถูกต้อง</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <i class="fa fa-check-circle text-secondary text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">2. SECURITY CORE 🔐</h4>
+                                    <p class="text-gray-600">ระบบความปลอดภัยระดับธนาคาร: API Key, Encryption, RBAC, Audit Log, DDOS Protection</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <i class="fa fa-check-circle text-secondary text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">3. TOKEN BILLING 💰</h4>
+                                    <p class="text-gray-600">ระบบการค้าในตัว: เติมเงิน, หักเงินอัตโนมัติ, แพ็กเกจราคา, รายได้, ใบเสร็จ</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <i class="fa fa-check-circle text-secondary text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">4. MOB COMPILER 🧰</h4>
+                                    <p class="text-gray-600">ส่วนที่สำคัญที่สุด: แปลงผลลัพธ์ทั้งหมดเป็นไฟล์ .vpack ที่เครื่อง MOB อ่านและติดตั้งได้ทันที</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <i class="fa fa-check-circle text-secondary text-2xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">5. OFFLINE AI 📴</h4>
+                                    <p class="text-gray-600">ระบบปัญญาประดิษฐ์ฝังในเครื่อง ไม่ต่อเน็ต ข้อมูลไม่รั่วไหล ปลอดภัยสูงสุด</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✨ FEATURES SECTION -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-kanit font-bold text-[clamp(2rem,4vw,3.5rem)] gradient-text mb-4">ความสามารถทั้งหมดของ VIDER OFFICE 🚀✨</h2>
+                <p class="text-gray-600 text-lg">ทุกฟีเจอร์ถูกพัฒนาเพื่อธุรกิจและอุตสาหกรรม ครบวงจร พร้อมใช้งาน</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">วิเคราะห์ระบบอัจฉริยะ 🕵️‍♂️</h3>
+                    <p class="text-gray-600 leading-relaxed">สแกนและวิเคราะห์โครงสร้างระบบงานปัจจุบันอย่างลึกซึ้ง ค้นหาจุดแข็ง จุดอ่อน ส่วนที่มี ส่วนที่ขาด ประเมินความเสี่ยง และออกแบบแผนการยกระดับที่เหมาะสมที่สุด ด้วย AI อัจฉริยะ 🧠</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ใช้ 5 Token / ครั้ง</span>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">ออกแบบสถาปัตยกรรม 📐</h3>
+                    <p class="text-gray-600 leading-relaxed">ออกแบบระบบใหม่ทั้งหมดให้ทันสมัย มีประสิทธิภาพ รองรับการขยายตัวในอนาคต โดยคำนึงถึงการทำงานร่วมกับระบบเดิมเป็นหลัก สร้างแผนภาพการไหลของข้อมูล (DFD), Schema และโครงสร้างฐานข้อมูลที่สมบูรณ์</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ใช้ 10 Token / ครั้ง</span>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-warning/10 text-warning flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">เขียนโค้ดอัตโนมัติ 💻</h3>
+                    <p class="text-gray-600 leading-relaxed">เขียนโค้ดโปรแกรมทั้งหมดด้วย AI รองรับทุกภาษา ทุกแพลตฟอร์ม ทุกเฟรมเวิร์ก สร้างโมดูลใหม่สำหรับแผนกที่ขาด และสร้าง Adapter เชื่อมต่อสำหรับแผนกที่มีอยู่แล้ว โค้ดสะอาด ปลอดภัย มาตรฐานระดับสากล</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ใช้ 25 Token / ครั้ง</span>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-android"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">ฝังระบบ AI ออฟไลน์ 🧠📴</h3>
+                    <p class="text-gray-600 leading-relaxed">สร้างระบบปัญญาประดิษฐ์แบบฝังตัว (Embedded AI) ทำงานแบบออฟไลน์ 100% ไม่ต้องต่อเน็ต ข้อมูลไม่ออกนอกองค์กร รองรับการเรียนรู้, วิเคราะห์, คาดการณ์, ตัดสินใจ, แก้ปัญหาแทนมนุษย์ ในทุกแผนกงาน</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ใช้ 50 Token / แผนก</span>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-cube"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">บรรจุไฟล์สำหรับ MOB 📦🧰</h3>
+                    <p class="text-gray-600 leading-relaxed">ฟีเจอร์สำคัญที่สุด: รวบรวมทุกอย่างที่สร้างได้ บรรจุลงรูปแบบไฟล์มาตรฐาน `.vpack` ซึ่งเครื่อง <b>MOB (Machine Offline Builder)</b> อ่านและติดตั้งใช้งานได้ทันที ภายในมีระบบ Safety, Rollback และ Script การติดตั้งอัตโนมัติครบถ้วน</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ใช้ 150 Token / ระบบ</span>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 rounded-xl bg-warning/10 text-warning flex items-center justify-center text-3xl mb-6">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <h3 class="font-kanit font-bold text-2xl mb-3">ระบบความปลอดภัยสูงสุด 🔐🛡️</h3>
+                    <p class="text-gray-600 leading-relaxed">รักษาความปลอดภัยระดับทหาร รองรับ API Key Authentication, Encryption ทั้งทางเดินและฐานข้อมูล, Audit Logging ทุกการกระทำ, Rate Limiting, ป้องกัน SQL Injection, XSS, CSRF และภัยคุกคามไซเบอร์ทุกรูปแบบ</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <span class="text-secondary font-semibold">ฟรี! รวมในทุกแพ็กเกจ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔄 HOW IT WORKS -->
+    <section id="howitworks" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-kanit font-bold text-[clamp(2rem,4vw,3.5rem)] gradient-text mb-4">ขั้นตอนการทำงาน 🛠️⚡️</h2>
+                <p class="text-gray-600 text-lg">ง่ายนิดเดียว เพียง 5 ขั้นตอน คุณก็จะได้ระบบอัจฉริยะครบวงจร 🚀</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 hidden md:block"></div>
+
+                <!-- Step 1 -->
+                <div class="relative mb-16 md:mb-24">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                            <h3 class="font-kanit font-bold text-3xl text-primary mb-3">1. ส่งข้อมูลระบบ 📤</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">ส่งข้อมูลรายละเอียดระบบงานปัจจุบันของคุณผ่าน API หรือ Dashboard ระบุชื่อโปรเจกต์ ประเภทระบบ และแผนกงานที่มีอย
